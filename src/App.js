@@ -22,12 +22,14 @@ class App extends React.Component {
   }
 
   bold_click() {
+
+    console.log(this.state.bold)
     if (this.state.bold === false) {
       document.querySelector(".smart-option-bold").style.color = "black";
       document.querySelector(".smart-option-bold").style.backgroundColor =
         "white";
       this.setState({
-        bold: true,
+        bold: true
       });
     } else {
       document.querySelector(".smart-option-bold").style.color = "white";
@@ -37,23 +39,28 @@ class App extends React.Component {
         bold: false,
       });
 
-      const smartContentArea = document.querySelector(".smart-content-area");
-      smartContentArea.innerHTML = `${smartContentArea.innerText}<strong id="easy">&#8203</strong>`;
-
-      const el = document.getElementById("easy");
-      const selection = window.getSelection();
-      const range = document.createRange();
-      selection.removeAllRanges();
-      range.selectNodeContents(el);
-      range.collapse(false);
-      selection.addRange(range);
-      el.focus();
-
-        
-
-
 
     }
+    console.log(this.state.bold);
+    let bold = this.state.bold === false ? "bold" : "normal";
+    let italic = this.state.italic === true ? "italic" : "normal"
+    let underline = this.state.underline === true ? "underline" : "none";
+
+    const smartContentArea = document.querySelector(".smart-content-area");
+    smartContentArea.innerHTML = `${smartContentArea.innerHTML}<span class="latest" style="font-style:${italic};font-weight:${bold};text-decoration:${underline}">&#8203</span>`;
+
+    let length = document.getElementsByClassName("latest").length;
+    console.log(length)
+
+    const el = document.getElementsByClassName("latest")[length-1];
+    const selection = window.getSelection();
+    const range = document.createRange();
+    selection.removeAllRanges();
+    range.selectNodeContents(el);
+    range.collapse(false);
+    selection.addRange(range);
+    el.focus();
+
   }
 
   italic_click() {
@@ -72,6 +79,26 @@ class App extends React.Component {
         italic: false,
       });
     }
+
+     console.log(this.state.italic);
+     let bold = this.state.bold === true ? "bold" : "normal";
+     let italic = this.state.italic === false ? "italic" : "normal";
+     let underline = this.state.underline === true ? "underline" : "none";
+
+     const smartContentArea = document.querySelector(".smart-content-area");
+     smartContentArea.innerHTML = `${smartContentArea.innerHTML}<span class="latest" style="font-style:${italic};font-weight:${bold};text-decoration:${underline}">&#8203</span>`;
+
+     let length = document.getElementsByClassName("latest").length;
+     console.log(length);
+
+     const el = document.getElementsByClassName("latest")[length - 1];
+     const selection = window.getSelection();
+     const range = document.createRange();
+     selection.removeAllRanges();
+     range.selectNodeContents(el);
+     range.collapse(false);
+     selection.addRange(range);
+     el.focus();
   }
 
   underline_click() {
@@ -90,6 +117,33 @@ class App extends React.Component {
         underline: false,
       });
     }
+     console.log(this.state.underline);
+     let bold = this.state.bold === true ? "bold" : "normal";
+     let italic = this.state.italic === true ? "italic" : "normal";
+     let underline = this.state.underline === false ? "underline" : "none";
+
+     const smartContentArea = document.querySelector(".smart-content-area");
+     smartContentArea.innerHTML = `${smartContentArea.innerHTML}<span class="latest" style="font-style:${italic};font-weight:${bold};text-decoration:${underline}">&#8203</span>`;
+
+     let length = document.getElementsByClassName("latest").length;
+     console.log(length);
+
+     const el = document.getElementsByClassName("latest")[length - 1];
+     const selection = window.getSelection();
+     const range = document.createRange();
+     selection.removeAllRanges();
+     range.selectNodeContents(el);
+     range.collapse(false);
+     selection.addRange(range);
+     el.focus();
+
+
+
+
+
+
+
+
   }
 
   componentDidMount(){
