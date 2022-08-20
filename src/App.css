@@ -1,27 +1,38 @@
 
-
+body{
+    width: 100%;
+    background-color:  rgb(172, 200, 212);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .smart-editor{
     height: 30vh;
-    width: 50vw;
+    width: 80%;
+    margin: 5rem auto;
     border: 2px solid black;
     background-color: whitesmoke;
 }
 
 .smart-formatter{
     display: flex;
-    border:2px solid green;
+    border-bottom :2px solid black;
+    background: rgb(181, 178, 172);
 }
 
 .smart-formatter-option{
     padding: .8em;
     background-color: black;
-    color: white;
+    color: rgb(181, 178, 172);
     cursor: pointer;
-    border: .1em solid white;
+    border: .11em solid  rgb(172, 200, 212);
+}
+
+.smart-option-underline{
+    text-decoration: underline;
 }
 
 .smart-content-area{
     height: 100%;
     border: none;
     outline: none;
+    padding: 0.4rem;
 }

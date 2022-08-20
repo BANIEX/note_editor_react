@@ -22,17 +22,19 @@ class App extends React.Component {
   }
 
   bold_click() {
+    this.clear();
 
     console.log(this.state.bold)
     if (this.state.bold === false) {
       document.querySelector(".smart-option-bold").style.color = "black";
       document.querySelector(".smart-option-bold").style.backgroundColor =
-        "white";
+        "rgb(181, 178, 172)";
       this.setState({
         bold: true
       });
     } else {
-      document.querySelector(".smart-option-bold").style.color = "white";
+      document.querySelector(".smart-option-bold").style.color =
+        "rgb(181, 178, 172)";
       document.querySelector(".smart-option-bold").style.backgroundColor =
         "black";
       this.setState({
@@ -64,15 +66,19 @@ class App extends React.Component {
   }
 
   italic_click() {
+
+    this.clear();
+
     if (this.state.italic === false) {
       document.querySelector(".smart-option-italic").style.color = "black";
       document.querySelector(".smart-option-italic").style.backgroundColor =
-        "white";
+        "rgb(181, 178, 172)";
       this.setState({
         italic: true,
       });
     } else {
-      document.querySelector(".smart-option-italic").style.color = "white";
+      document.querySelector(".smart-option-italic").style.color =
+        "rgb(181, 178, 172)";
       document.querySelector(".smart-option-italic").style.backgroundColor =
         "black";
       this.setState({
@@ -102,15 +108,20 @@ class App extends React.Component {
   }
 
   underline_click() {
+
+
+    this.clear();
+
     if (this.state.underline === false) {
       document.querySelector(".smart-option-underline").style.color = "black";
       document.querySelector(".smart-option-underline").style.backgroundColor =
-        "white";
+        "rgb(181, 178, 172)";
       this.setState({
         underline: true,
       });
     } else {
-      document.querySelector(".smart-option-underline").style.color = "white";
+      document.querySelector(".smart-option-underline").style.color =
+        "rgb(181, 178, 172)";
       document.querySelector(".smart-option-underline").style.backgroundColor =
         "black";
       this.setState({
@@ -191,7 +202,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         <div className="smart-editor">
           <div className="smart-formatter">
             <span
@@ -216,10 +227,15 @@ class App extends React.Component {
             </span>
           </div>
 
-          <div className="smart-content-area" contenteditable="true" onFocus={this.clear} onBlur={this.restoreClear}>
+          <div
+            className="smart-content-area"
+            contenteditable="true"
+            onFocus={this.clear}
+            onBlur={this.restoreClear}
+          >
             {this.state.holder}
           </div>
-          <div>
+          {/* <div>
             <span
               style={{
                 fontWeight: "bold",
@@ -229,19 +245,19 @@ class App extends React.Component {
             >
               yaaaaaaaaaaa
             </span>
-          </div>
-          <div>
+          </div> */}
+          {/* <div>
             <span>suuuuupp bro</span>
-          </div>
+          </div> */}
 
-          <div id="cd" contenteditable="true">
+          {/* <div id="cd" contenteditable="true">
             eq<span>hiiii</span>
             <span>banko</span>
-          </div>
+          </div> */}
 
-          <span id="hello">jhshkj</span>
+          {/* <span id="hello">jhshkj</span> */}
         </div>
-      </>
+      </div>
     );
   }
 }
