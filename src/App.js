@@ -158,7 +158,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
-        const smartContentArea = document.querySelector(".smart-content-area");
+        // const smartContentArea = document.querySelector(".smart-content-area");
 
         // smartContentArea.addEventListener("onB")
 

@@ -1,8 +1,7 @@
+Kindly checkout @ https://infinite-oasis-47616.herokuapp.com/
+
 #todo
-
-on click and on blur problem
-
-when clean button toggle
+On clean 
 
 # Getting Started with Create React App
 
